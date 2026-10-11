@@ -1,6 +1,7 @@
 import desert from '@/assets/desert-film.jpg';
 import runner from '@/assets/runner-film.jpg';
 import abstract from '@/assets/abstract-film.jpg';
+import sampleFilm from '@/assets/sample-film.mp4.asset.json';
 
 export const categories = ['All', 'AI Generation', 'Long Form', 'Short Form / Reels', 'Clipping'] as const;
 export type Category = typeof categories[number];
@@ -13,13 +14,15 @@ export const projects: Project[] = [
   { id: 5, title: 'Somewhere, slowly', category: 'Long Form', image: desert, duration: '05:16', metric: 'Travel documentary', url: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ', description: 'An atmospheric travel concept balancing immersive landscape sequences with human moments, a considered score, and consistent cinematic color.', tools: ['DaVinci Resolve', 'Premiere Pro'] },
   { id: 6, title: 'Form follows feeling', category: 'AI Generation', image: abstract, duration: '00:24', metric: 'Generative motion study', url: 'https://www.youtube.com/watch?v=YE7VzlLtp-4', description: 'A tactile motion study combining generative imagery, sculptural forms, and carefully timed sound to create a distinctive visual identity.', tools: ['Runway', 'After Effects', 'DaVinci Resolve'] },
 ];
-export const hubVideos = [
+export interface HubVideo { title: string; type: string; duration: string; url: string; }
+export const hubVideos: [HubVideo, HubVideo, HubVideo, HubVideo] = [
   { title: 'Big Buck Bunny', type: 'YouTube', duration: '09:56', url: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ' },
   { title: 'Sintel — cinematic short', type: 'YouTube', duration: '14:48', url: 'https://www.youtube.com/watch?v=eRsGyueVLvQ' },
   { title: 'Tears of Steel', type: 'YouTube', duration: '12:14', url: 'https://www.youtube.com/watch?v=R6MlUcmOul8' },
-  { title: 'Big Buck Bunny — direct cut', type: 'MP4', duration: '00:10', url: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+  { title: 'Beyond the ordinary — motion study', type: 'MP4', duration: '00:08', url: sampleFilm.url },
 ];
 export function resolveVideo(value: string): { type: 'embed' | 'video'; src: string } | null {
+  if (value === sampleFilm.url) return { type: 'video', src: sampleFilm.url };
   try {
     const url = new URL(value.trim());
     if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;

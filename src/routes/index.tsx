@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, ArrowRight, ArrowDown, Play, Film, Sparkles, Scissors, Link as LinkIcon, Copy, Check, Mail, Instagram, Youtube, Linkedin, CircleCheck, ExternalLink } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, ArrowDown, Play, Film, Sparkles, Scissors, Link as LinkIcon, Copy, Check, Mail, Instagram, Youtube, Linkedin, CircleCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { VideoPlayer } from '@/components/portfolio/video-player';
@@ -26,7 +26,7 @@ function Stat({ value, suffix, children }: { value: number; suffix: string; chil
     if (!node) return;
     let frame = 0;
     const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
+      if (!entry?.isIntersecting) return;
       observer.disconnect();
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setCount(value); return; }
       const start = performance.now();
@@ -42,6 +42,7 @@ function Stat({ value, suffix, children }: { value: number; suffix: string; chil
 function Portfolio() {
   const [filter, setFilter] = useState<Category>('All');
   const [selected, setSelected] = useState<Project | null>(null);
+  const openReel = () => { const reel = projects[0]; if (reel) setSelected({ ...reel, title: 'The showreel — 2026', url: hubVideos[3].url }); };
   const [activeVideo, setActiveVideo] = useState({ ...hubVideos[0] });
   const [playing, setPlaying] = useState(false);
   const [videoInput, setVideoInput] = useState('');
@@ -70,8 +71,8 @@ function Portfolio() {
       <section className="hero container-width">
         <div className="hero-top"><span className="eyebrow"><i />Independent editor. Intentional storyteller.</span><span className="hero-edition">PORTFOLIO / 2026</span></div>
         <h1 className="hero-heading">Video Editor &<br /><span className="highlight">Visual Specialist.</span></h1>
-        <div className="hero-summary"><p>Crafting high-retention short-form content, cinematic long-form cuts, precision clipping, and next-gen AI video pipelines.</p><div className="hero-actions"><Button asChild size="lg"><a href="#work">Explore work<ArrowDown /></a></Button><Button variant="outline" size="lg" onClick={() => setSelected({ ...projects[0], title: 'The showreel — 2026' })}><Play size={13} />Quick watch reel</Button></div></div>
-        <div className="hero-film"><img src={desert} width={1920} height={1024} alt="A lone traveler crossing sunlit desert dunes beneath rugged mountains" fetchPriority="high" /><div className="film-top"><span className="film-label">THE SHOWREEL</span><span className="film-label">2026</span></div><div className="film-bottom"><div><p>A FEW FRAMES. A WORLD OF POSSIBILITIES.</p><h2>Every frame has a purpose.</h2></div><div className="flex items-center"><span className="film-code">PLAY REEL ↗ &nbsp; 03:42</span><Button className="reel-button ml-4" aria-label="Play showreel" onClick={() => setSelected({ ...projects[0], title: 'The showreel — 2026' })}><Play fill="currentColor" /></Button></div></div></div>
+        <div className="hero-summary"><p>Crafting high-retention short-form content, cinematic long-form cuts, precision clipping, and next-gen AI video pipelines.</p><div className="hero-actions"><Button asChild size="lg"><a href="#work">Explore work<ArrowDown /></a></Button><Button variant="outline" size="lg" onClick={openReel}><Play size={13} />Quick watch reel</Button></div></div>
+        <div className="hero-film"><img src={desert} width={1920} height={1024} alt="A lone traveler crossing sunlit desert dunes beneath rugged mountains" fetchPriority="high" /><div className="film-top"><span className="film-label">THE SHOWREEL</span><span className="film-label">2026</span></div><div className="film-bottom"><div><p>A FEW FRAMES. A WORLD OF POSSIBILITIES.</p><h2>Every frame has a purpose.</h2></div><div className="flex items-center"><span className="film-code">PLAY REEL ↗ &nbsp; 03:42</span><Button className="reel-button ml-4" aria-label="Play showreel" onClick={openReel}><Play fill="currentColor" /></Button></div></div></div>
         <div className="stats"><Stat value={10} suffix="M+">Views generated<br />and counting</Stat><Stat value={150} suffix="+">Projects delivered<br />with intention</Stat><Stat value={100} suffix="%">Focus on retention<br />from the first frame</Stat></div>
       </section>
       <section id="work" className="section container-width">
