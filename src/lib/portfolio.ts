@@ -14,6 +14,8 @@ export const projects: Project[] = [
   { id: 5, title: 'Somewhere, slowly', category: 'Long Form', image: desert, duration: '05:16', metric: 'Travel documentary', url: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ', description: 'An atmospheric travel concept balancing immersive landscape sequences with human moments, a considered score, and consistent cinematic color.', tools: ['DaVinci Resolve', 'Premiere Pro'] },
   { id: 6, title: 'Form follows feeling', category: 'AI Generation', image: abstract, duration: '00:24', metric: 'Generative motion study', url: 'https://www.youtube.com/watch?v=YE7VzlLtp-4', description: 'A tactile motion study combining generative imagery, sculptural forms, and carefully timed sound to create a distinctive visual identity.', tools: ['Runway', 'After Effects', 'DaVinci Resolve'] },
 ];
+export const showreel: Project = { id: 0, title: '2024 | Video Editor Show Reel', category: 'Long Form', image: desert, duration: '', metric: 'YouTube showreel', url: 'https://youtu.be/r3r-gAOrdxo', description: 'One pass through recent edits — opening hooks, pacing that holds, and sound and grade working together. The fastest way to see how a raw folder of footage becomes something people stay for.', tools: ['Premiere Pro', 'After Effects', 'DaVinci Resolve'] };
+
 export interface HubVideo { title: string; type: string; duration: string; url: string; }
 export const hubVideos: [HubVideo, HubVideo, HubVideo, HubVideo] = [
   { title: 'Big Buck Bunny', type: 'YouTube', duration: '09:56', url: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ' },
