@@ -3,3 +3,4 @@
 - [x] Implement gallery filters, accessible detail drawer, reel, four-video switcher and URL player.
 - [x] Verify interactions, mobile layout and email copying.
 - [x] Wire real contact email and Instagram/LinkedIn/Upwork links.
+- [x] Replace the default favicon with the custom "h." logo mark.
