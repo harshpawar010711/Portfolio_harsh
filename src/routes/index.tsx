@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, ArrowRight, ArrowDown, Play, Film, Sparkles, Scissors, Link as LinkIcon, Copy, Check, Mail, Instagram, Linkedin, CircleCheck } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { ArrowUpRight, ArrowRight, ArrowDown, Play, Film, Sparkles, Scissors, Link as LinkIcon, Copy, Check, Mail, Instagram, Linkedin, CircleCheck, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { VideoPlayer } from '@/components/portfolio/video-player';
@@ -41,8 +41,17 @@ function Stat({ value, suffix, children }: { value: number; suffix: string; chil
 
 function Portfolio() {
   const [filter, setFilter] = useState<Category>('All');
+  const [moreOpen, setMoreOpen] = useState(false);
   const [selected, setSelected] = useState<Project | null>(null);
   const openReel = () => setSelected(showreel);
+  const shownProjects = useMemo(() => {
+    const list = projects.filter(project => filter === 'All' || project.category === filter);
+    if (filter !== 'All') return list;
+    const seen = new Map<Category, number>();
+    return list.filter(project => { const count = (seen.get(project.category) ?? 0) + 1; seen.set(project.category, count); return count <= 3; });
+  }, [filter]);
+  const extraProjects = useMemo(() => projects.filter(project => (filter === 'All' || project.category === filter) && !shownProjects.includes(project)), [filter, shownProjects]);
+  const visibleProjects = moreOpen ? [...shownProjects, ...extraProjects] : shownProjects;
   const [activeVideo, setActiveVideo] = useState({ ...hubVideos[0]! });
   const [playing, setPlaying] = useState(false);
   const [videoInput, setVideoInput] = useState('');
