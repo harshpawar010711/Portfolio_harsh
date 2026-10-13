@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, ArrowRight, ArrowDown, Play, Film, Sparkles, Scissors, Link as LinkIcon, Copy, Check, Mail, Instagram, Linkedin, CircleCheck } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { ArrowUpRight, ArrowRight, ArrowDown, Play, Film, Sparkles, Scissors, Link as LinkIcon, Copy, Check, Mail, Instagram, Linkedin, CircleCheck, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { VideoPlayer } from '@/components/portfolio/video-player';
@@ -41,8 +41,17 @@ function Stat({ value, suffix, children }: { value: number; suffix: string; chil
 
 function Portfolio() {
   const [filter, setFilter] = useState<Category>('All');
+  const [moreOpen, setMoreOpen] = useState(false);
   const [selected, setSelected] = useState<Project | null>(null);
   const openReel = () => setSelected(showreel);
+  const shownProjects = useMemo(() => {
+    const list = projects.filter(project => filter === 'All' || project.category === filter);
+    if (filter !== 'All') return list;
+    const seen = new Map<Category, number>();
+    return list.filter(project => { const count = (seen.get(project.category) ?? 0) + 1; seen.set(project.category, count); return count <= 3; });
+  }, [filter]);
+  const extraProjects = useMemo(() => projects.filter(project => (filter === 'All' || project.category === filter) && !shownProjects.includes(project)), [filter, shownProjects]);
+  const visibleProjects = moreOpen ? [...shownProjects, ...extraProjects] : shownProjects;
   const [activeVideo, setActiveVideo] = useState({ ...hubVideos[0]! });
   const [playing, setPlaying] = useState(false);
   const [videoInput, setVideoInput] = useState('');
@@ -77,8 +86,9 @@ function Portfolio() {
       </section>
       <section id="work" className="section container-width">
         <div className="section-heading"><div><span className="eyebrow"><i />01 / The portfolio</span><h2>Selected work<span className="text-muted-foreground">.</span></h2></div><p>Different formats. One obsession.<br />Making content impossible to skip.</p></div>
-        <div className="filters" aria-label="Project category filters">{categories.filter(category => category === 'All' || projects.some(p => p.category === category)).map(category => <Button key={category} variant="ghost" className={`filter ${filter === category ? 'filter-active' : 'bg-secondary text-muted-foreground'}`} aria-pressed={filter === category} onClick={() => setFilter(category)}>{category}{category === 'All' && <span className="opacity-50 ml-1">09</span>}</Button>)}</div>
-        <div className="project-grid">{projects.filter(project => filter === 'All' || project.category === filter).map(project => <Button key={project.id} variant="ghost" className="project-card" onClick={() => setSelected(project)} aria-label={`View project: ${project.title}`}><div className="project-thumbnail"><img src={project.image} loading="lazy" width={1536} height={864} alt={project.title} /><div className="project-play"><span><Play fill="currentColor" /></span></div><span className="duration">{project.duration}</span></div><div className="project-info"><h3>{project.title}<ArrowUpRight /></h3><div className="project-meta"><span className={`category-tag ${project.category === 'AI Generation' ? 'ai' : project.category === 'Short Form / Reels' ? 'short' : ''}`}>{project.category === 'Short Form / Reels' ? 'Short Form' : project.category}</span>{project.client && <span className="client-tag">{project.client.name}</span>}<span>{project.metric}</span></div></div></Button>)}</div>
+        <div className="filters" aria-label="Project category filters">{categories.filter(category => category === 'All' || projects.some(p => p.category === category)).map(category => <Button key={category} variant="ghost" className={`filter ${filter === category ? 'filter-active' : 'bg-secondary text-muted-foreground'}`} aria-pressed={filter === category} onClick={() => { setFilter(category); setMoreOpen(false); }}>{category}{category === 'All' && <span className="opacity-50 ml-1">09</span>}</Button>)}</div>
+        <div className="project-grid">{visibleProjects.map(project => <Button key={project.id} variant="ghost" className="project-card" onClick={() => setSelected(project)} aria-label={`View project: ${project.title}`}><div className="project-thumbnail"><img src={project.image} loading="lazy" width={1536} height={864} alt={project.title} /><div className="project-play"><span><Play fill="currentColor" /></span></div><span className="duration">{project.duration}</span></div><div className="project-info"><h3>{project.title}<ArrowUpRight /></h3><div className="project-meta"><span className={`category-tag ${project.category === 'AI Generation' ? 'ai' : project.category === 'Short Form / Reels' ? 'short' : ''}`}>{project.category === 'Short Form / Reels' ? 'Short Form' : project.category}</span>{project.client && <span className="client-tag">{project.client.name}</span>}<span>{project.metric}</span></div></div></Button>)}</div>
+        {extraProjects.length > 0 && <button type="button" className="more-work" aria-expanded={moreOpen} onClick={() => setMoreOpen(open => !open)}><span className="more-work-label">{moreOpen ? 'Show less' : 'More work'}</span><span className="more-work-count">{moreOpen ? 'Collapse' : `${extraProjects.length} more project${extraProjects.length === 1 ? '' : 's'}`}</span><ChevronDown className="more-work-chevron" size={14} /></button>}
         <p className="project-note"><CircleCheck size={12} />Selected client work · Streams from YouTube & Instagram</p>
       </section>
       <section id="watch" className="section hub-section"><div className="container-width">
