@@ -1,3 +1,6 @@
+import aiTab from '@/assets/ai-tab.jpg';
+import aiEp6 from '@/assets/ai-ep6.jpg';
+import aiGevj from '@/assets/ai-gevj.jpg';
 import desert from '@/assets/desert-film.jpg';
 import reelDream from '@/assets/reel-dream.jpg';
 import reelVirality from '@/assets/reel-virality.jpg';
@@ -18,6 +21,9 @@ export const projects: Project[] = [
   { id: 3, title: 'Our full story', category: 'Short Form / Reels', image: reelStory, duration: 'REEL', metric: 'Community event story', url: 'https://www.instagram.com/reel/DRHL92Lj_aj/', client: { name: 'sid.haldar', url: 'https://www.instagram.com/sid.haldar/' }, description: 'A narrative reel that folds an entire journey into one vertical cut — event footage, on-screen typography, and a beat-matched build that lands the payoff right where the loop closes.', tools: ['Premiere Pro', 'After Effects'] },
   { id: 4, title: 'Marketing genius', category: 'Short Form / Reels', image: reelMarketing, duration: 'SHORT', metric: 'Business explainer short', url: 'https://youtube.com/shorts/NGk85Xwh88k', client: { name: 'Think School Hindi', url: 'https://www.youtube.com/@ThinkSchool_Hindi' }, description: 'A business breakdown compressed into a scroll-stopping short: annotated visuals, kinetic captions, and pacing that turns a case study into something people finish and share.', tools: ['Premiere Pro', 'After Effects'] },
   { id: 5, title: 'When silence becomes the final warning', category: 'Short Form / Reels', image: reelSilence, duration: 'SHORT', metric: 'Narrative short', url: 'https://youtube.com/shorts/ssMpDIdG0Q8', client: { name: 'Adnan Adeeb', url: 'https://www.youtube.com/@adnanadeebx' }, description: 'A suspense-driven narrative short where the edit does the storytelling — held silences, deliberate sound design, and cuts that release tension exactly when the story needs it.', tools: ['Premiere Pro', 'DaVinci Resolve'] },
+  { id: 7, title: 'TAB promo', category: 'AI Generation', image: aiTab, duration: 'AI', metric: 'AI-generated period drama promo', url: 'https://drive.google.com/file/d/1Rhwd379X7nDvG54Z5dQpe0IlAWGpaJjH/view', description: 'A cinematic promo built from AI-generated scenes — candlelit interiors, dramatic character beats and a trailer-style build, cut so the generated footage reads like a real production.', tools: ['AI video generation', 'Premiere Pro', 'After Effects'] },
+  { id: 8, title: 'Episode 06', category: 'AI Generation', image: aiEp6, duration: 'AI', metric: 'AI-generated series episode', url: 'https://drive.google.com/file/d/1PbTjdaI5qeU5xjTF30iza24iC1Gc9lx9/view', description: 'An episode from an AI-generated vertical series. Generated shots are sequenced for continuity, paced for retention, and finished with sound design that carries the story between scenes.', tools: ['AI video generation', 'Premiere Pro'] },
+  { id: 9, title: 'Night street sequence', category: 'AI Generation', image: aiGevj, duration: 'AI', metric: 'AI-generated cinematic sequence', url: 'https://drive.google.com/file/d/16ByU3z5i57tSJIUv1pzxX6MlYJoPHkrL/view', description: 'A moody night-time sequence made with generative video — street-light atmosphere, deliberate camera moves and a grade that keeps every generated shot feeling like one world.', tools: ['AI video generation', 'DaVinci Resolve'] },
   showreel,
 ];
 
