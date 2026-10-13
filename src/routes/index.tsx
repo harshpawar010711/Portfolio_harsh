@@ -48,7 +48,7 @@ function Portfolio() {
     const list = projects.filter(project => filter === 'All' || project.category === filter);
     if (filter !== 'All') return list;
     const seen = new Map<Category, number>();
-    return list.filter(project => { const count = (seen.get(project.category) ?? 0) + 1; seen.set(project.category, count); return count <= 3; });
+    return list.filter(project => { const count = (seen.get(project.category) ?? 0) + 1; seen.set(project.category, count); return count <= 1; });
   }, [filter]);
   const extraProjects = useMemo(() => projects.filter(project => (filter === 'All' || project.category === filter) && !shownProjects.includes(project)), [filter, shownProjects]);
   const visibleProjects = moreOpen ? [...shownProjects, ...extraProjects] : shownProjects;

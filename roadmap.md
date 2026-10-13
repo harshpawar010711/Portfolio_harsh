@@ -7,4 +7,4 @@
 - [x] Point both reel triggers at the real YouTube showreel.
 - [x] Replace dummy video links with the five real client reels (YouTube shorts + Instagram reels) in gallery and hub.
 - [x] Add per-card creator tags and footer row for The Bihar Story / The Uttar Pradesh Story / FOAID.
-- [x] Cap the "All" gallery at three cards per category with the rest behind a "More work" bar.
+- [x] Show one card per category in the "All" gallery with all remaining videos behind a "More work" bar.
