@@ -1,28 +1,35 @@
 import desert from '@/assets/desert-film.jpg';
-import runner from '@/assets/runner-film.jpg';
-import abstract from '@/assets/abstract-film.jpg';
+import reelDream from '@/assets/reel-dream.jpg';
+import reelVirality from '@/assets/reel-virality.jpg';
+import reelStory from '@/assets/reel-story.jpg';
+import reelMarketing from '@/assets/reel-marketing.jpg';
+import reelSilence from '@/assets/reel-silence.jpg';
 import sampleFilm from '@/assets/sample-film.mp4.asset.json';
 
 export const categories = ['All', 'AI Generation', 'Long Form', 'Short Form / Reels', 'Clipping'] as const;
 export type Category = typeof categories[number];
-export interface Project { id: number; title: string; category: Category; image: string; duration: string; metric: string; url: string; description: string; tools: string[]; }
+export interface Project { id: number; title: string; category: Category; image: string; duration: string; metric: string; url: string; description: string; tools: string[]; client?: { name: string; url: string }; }
+
+export const showreel: Project = { id: 6, title: '2024 | Video Editor Show Reel', category: 'Long Form', image: desert, duration: '', metric: 'YouTube showreel', url: 'https://youtu.be/r3r-gAOrdxo', description: 'One pass through recent edits — opening hooks, pacing that holds, and sound and grade working together. The fastest way to see how a raw folder of footage becomes something people stay for.', tools: ['Premiere Pro', 'After Effects', 'DaVinci Resolve'] };
+
 export const projects: Project[] = [
-  { id: 1, title: 'Beyond the ordinary', category: 'Long Form', image: desert, duration: '03:42', metric: 'Cinematic storytelling', url: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ', description: 'A cinematic journey built around space, silence, and discovery. Deliberate pacing, layered ambient sound, and a warm color grade turn a collection of landscapes into a story worth staying for.', tools: ['Premiere Pro', 'DaVinci Resolve', 'After Effects'] },
-  { id: 2, title: 'Built for the next move', category: 'Short Form / Reels', image: runner, duration: '00:30', metric: 'Hook-first brand film', url: 'https://www.youtube.com/watch?v=ScMzIvxBSi4', description: 'A kinetic sports concept with a strong opening hook, rhythmic cuts, and tightly synchronized sound design. Every frame is built to carry the momentum into the next.', tools: ['Premiere Pro', 'After Effects'] },
-  { id: 3, title: 'A world not yet imagined', category: 'AI Generation', image: abstract, duration: '00:48', metric: 'AI concept piece', url: 'https://www.youtube.com/watch?v=YE7VzlLtp-4', description: 'An exploration of material, movement, and impossible forms. Generative experimentation meets precise compositing and intentional editorial rhythm.', tools: ['Runway', 'Kling', 'After Effects'] },
-  { id: 4, title: 'The moments that matter', category: 'Clipping', image: runner, duration: '00:45', metric: 'Precision highlight edit', url: 'https://www.youtube.com/watch?v=ScMzIvxBSi4', description: 'A focused highlight edit that extracts the strongest moments, trims the noise, and builds a self-contained narrative with clean captions and natural pacing.', tools: ['Premiere Pro', 'After Effects'] },
-  { id: 5, title: 'Somewhere, slowly', category: 'Long Form', image: desert, duration: '05:16', metric: 'Travel documentary', url: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ', description: 'An atmospheric travel concept balancing immersive landscape sequences with human moments, a considered score, and consistent cinematic color.', tools: ['DaVinci Resolve', 'Premiere Pro'] },
-  { id: 6, title: 'Form follows feeling', category: 'AI Generation', image: abstract, duration: '00:24', metric: 'Generative motion study', url: 'https://www.youtube.com/watch?v=YE7VzlLtp-4', description: 'A tactile motion study combining generative imagery, sculptural forms, and carefully timed sound to create a distinctive visual identity.', tools: ['Runway', 'After Effects', 'DaVinci Resolve'] },
+  { id: 1, title: 'Find your dream job', category: 'Short Form / Reels', image: reelDream, duration: 'SHORT', metric: 'Career storytelling short', url: 'https://youtube.com/shorts/9dnPIPjoMPA', client: { name: 'Think School', url: 'https://www.youtube.com/@ThinkSchool' }, description: 'A career-advice short engineered for retention: a direct hook in the first three seconds, crisp captions riding the narration, and punch-ins that keep the explanation moving without a wasted frame.', tools: ['Premiere Pro', 'After Effects'] },
+  { id: 2, title: 'Virality is not for everyone', category: 'Clipping', image: reelVirality, duration: 'REEL', metric: 'Podcast clip edit', url: 'https://www.instagram.com/reel/DRwHsO4kRB6/', client: { name: 'learn.kkcreate', url: 'https://www.instagram.com/learn.kkcreate/' }, description: 'A podcast moment cut for the feed. The strongest soundbite surfaces first, captions are timed to the delivery, and the story holds on its own — no full episode required.', tools: ['Premiere Pro', 'After Effects'] },
+  { id: 3, title: 'Our full story', category: 'Short Form / Reels', image: reelStory, duration: 'REEL', metric: 'Community event story', url: 'https://www.instagram.com/reel/DRHL92Lj_aj/', client: { name: 'sid.haldar', url: 'https://www.instagram.com/sid.haldar/' }, description: 'A narrative reel that folds an entire journey into one vertical cut — event footage, on-screen typography, and a beat-matched build that lands the payoff right where the loop closes.', tools: ['Premiere Pro', 'After Effects'] },
+  { id: 4, title: 'Marketing genius', category: 'Short Form / Reels', image: reelMarketing, duration: 'SHORT', metric: 'Business explainer short', url: 'https://youtube.com/shorts/NGk85Xwh88k', client: { name: 'Think School Hindi', url: 'https://www.youtube.com/@ThinkSchool_Hindi' }, description: 'A business breakdown compressed into a scroll-stopping short: annotated visuals, kinetic captions, and pacing that turns a case study into something people finish and share.', tools: ['Premiere Pro', 'After Effects'] },
+  { id: 5, title: 'When silence becomes the final warning', category: 'Short Form / Reels', image: reelSilence, duration: 'SHORT', metric: 'Narrative short', url: 'https://youtube.com/shorts/ssMpDIdG0Q8', client: { name: 'Adnan Adeeb', url: 'https://www.youtube.com/@adnanadeebx' }, description: 'A suspense-driven narrative short where the edit does the storytelling — held silences, deliberate sound design, and cuts that release tension exactly when the story needs it.', tools: ['Premiere Pro', 'DaVinci Resolve'] },
+  showreel,
 ];
-export const showreel: Project = { id: 0, title: '2024 | Video Editor Show Reel', category: 'Long Form', image: desert, duration: '', metric: 'YouTube showreel', url: 'https://youtu.be/r3r-gAOrdxo', description: 'One pass through recent edits — opening hooks, pacing that holds, and sound and grade working together. The fastest way to see how a raw folder of footage becomes something people stay for.', tools: ['Premiere Pro', 'After Effects', 'DaVinci Resolve'] };
 
 export interface HubVideo { title: string; type: string; duration: string; url: string; }
-export const hubVideos: [HubVideo, HubVideo, HubVideo, HubVideo] = [
-  { title: 'Big Buck Bunny', type: 'YouTube', duration: '09:56', url: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ' },
-  { title: 'Sintel — cinematic short', type: 'YouTube', duration: '14:48', url: 'https://www.youtube.com/watch?v=eRsGyueVLvQ' },
-  { title: 'Tears of Steel', type: 'YouTube', duration: '12:14', url: 'https://www.youtube.com/watch?v=R6MlUcmOul8' },
-  { title: 'Beyond the ordinary — motion study', type: 'MP4', duration: '00:08', url: sampleFilm.url },
+export const hubVideos: HubVideo[] = [
+  { title: 'Find your dream job', type: 'YouTube', duration: 'SHORT', url: 'https://youtube.com/shorts/9dnPIPjoMPA' },
+  { title: 'Virality is not for everyone', type: 'Instagram', duration: 'REEL', url: 'https://www.instagram.com/reel/DRwHsO4kRB6/' },
+  { title: 'Our full story', type: 'Instagram', duration: 'REEL', url: 'https://www.instagram.com/reel/DRHL92Lj_aj/' },
+  { title: 'Marketing genius', type: 'YouTube', duration: 'SHORT', url: 'https://youtube.com/shorts/NGk85Xwh88k' },
+  { title: 'When silence becomes the final warning', type: 'YouTube', duration: 'SHORT', url: 'https://youtube.com/shorts/ssMpDIdG0Q8' },
 ];
+
 export function resolveVideo(value: string): { type: 'embed' | 'video'; src: string } | null {
   if (value === sampleFilm.url) return { type: 'video', src: sampleFilm.url };
   try {
@@ -33,6 +40,7 @@ export function resolveVideo(value: string): { type: 'embed' | 'video'; src: str
       const id = host === 'youtu.be' ? url.pathname.split('/')[1] : url.searchParams.get('v') || url.pathname.match(/\/(?:embed|shorts|live)\/([^/]+)/)?.[1];
       return id && /^[\w-]{11}$/.test(id) ? { type: 'embed', src: `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0` } : null;
     }
+    if (host === 'instagram.com') { const id = url.pathname.match(/\/(?:reel|reels|p)\/([\w-]+)/)?.[1]; return id ? { type: 'embed', src: `https://www.instagram.com/reel/${id}/embed` } : null; }
     if (host === 'vimeo.com' || host === 'player.vimeo.com') { const id = url.pathname.match(/\d+/)?.[0]; return id ? { type: 'embed', src: `https://player.vimeo.com/video/${id}?autoplay=1` } : null; }
     if (host === 'loom.com') { const id = url.pathname.match(/\/(?:share|embed)\/([\w-]+)/)?.[1]; return id ? { type: 'embed', src: `https://www.loom.com/embed/${id}` } : null; }
     if (host === 'drive.google.com') { const id = url.pathname.match(/\/d\/([\w-]+)/)?.[1] || url.searchParams.get('id'); return id ? { type: 'embed', src: `https://drive.google.com/file/d/${id}/preview` } : null; }
