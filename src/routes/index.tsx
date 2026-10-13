@@ -43,7 +43,7 @@ function Portfolio() {
   const [filter, setFilter] = useState<Category>('All');
   const [selected, setSelected] = useState<Project | null>(null);
   const openReel = () => setSelected(showreel);
-  const [activeVideo, setActiveVideo] = useState({ ...hubVideos[0] });
+  const [activeVideo, setActiveVideo] = useState({ ...hubVideos[0]! });
   const [playing, setPlaying] = useState(false);
   const [videoInput, setVideoInput] = useState('');
   const [error, setError] = useState('');
