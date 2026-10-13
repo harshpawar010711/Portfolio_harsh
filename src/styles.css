@@ -165,3 +165,10 @@ button { font-family: inherit; }
 .clients-label { font-size: 8px; letter-spacing: 1.5px; color: var(--muted-foreground); }
 .clients-row a { font-size: 10px; color: var(--foreground); border-bottom: 1px solid var(--border); padding-bottom: 2px; transition: color .2s, border-color .2s; }
 .clients-row a:hover { color: var(--primary); border-color: var(--primary); }
+.more-work { width: 100%; margin-top: 23px; display: flex; align-items: center; gap: 14px; padding: 15px 18px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); box-shadow: var(--paper-shadow); color: var(--foreground); cursor: pointer; text-align: left; transition: border-color .2s, background .2s; }
+.more-work:hover { border-color: var(--foreground); background: color-mix(in oklab, var(--primary) 12%, var(--card)); }
+.more-work-label { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; }
+.more-work-count { margin-left: auto; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-foreground); }
+.more-work-chevron { color: var(--muted-foreground); transition: transform .3s; }
+.more-work[aria-expanded="true"] .more-work-chevron { transform: rotate(180deg); }
+@media (max-width: 767px) { .more-work { padding: 13px 14px; gap: 10px; }.more-work-label { font-size: 9px; }.more-work-count { font-size: 8px; } }
