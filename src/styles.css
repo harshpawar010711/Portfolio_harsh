@@ -26,6 +26,7 @@
   --paper-shadow: 0 5px 18px oklch(0.18 0 0 / 0.035);
 }
 * { border-color: var(--border); }
+html, body, body *, body *::before, body *::after { cursor: url("/__l5e/assets-v1/69bb48a1-859f-43f4-8a31-8c7d4d87efa4/icons8-cursor-32.png") 16 0, auto !important; }
 html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 body { margin: 0; background: var(--background); color: var(--foreground); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0; }
 button, a, input { -webkit-tap-highlight-color: transparent; }
