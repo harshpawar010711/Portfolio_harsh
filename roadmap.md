@@ -5,3 +5,5 @@
 - [x] Wire real contact email and Instagram/LinkedIn/Upwork links.
 - [x] Replace the default favicon with the custom "h." logo mark.
 - [x] Point both reel triggers at the real YouTube showreel.
+- [x] Replace dummy video links with the five real client reels (YouTube shorts + Instagram reels) in gallery and hub.
+- [x] Add per-card creator tags and footer row for The Bihar Story / The Uttar Pradesh Story / FOAID.
