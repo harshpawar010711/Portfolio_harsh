@@ -1,3 +1,6 @@
+import aiTab from '@/assets/ai-tab.jpg';
+import aiEp6 from '@/assets/ai-ep6.jpg';
+import aiGevj from '@/assets/ai-gevj.jpg';
 import desert from '@/assets/desert-film.jpg';
 import reelDream from '@/assets/reel-dream.jpg';
 import reelVirality from '@/assets/reel-virality.jpg';
