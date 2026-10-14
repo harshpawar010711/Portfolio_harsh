@@ -68,7 +68,7 @@ function Portfolio() {
   const loadLink = (event: React.FormEvent) => {
     event.preventDefault();
     if (!resolveVideo(videoInput)) { setError('Enter a valid YouTube, Instagram, Vimeo, Loom, Google Drive, or direct video link.'); return; }
-    setActiveVideo({ title: 'Your linked video', type: 'Direct link', duration: '', url: videoInput.trim() }); setPlaying(true); setError('');
+    setActiveVideo({ title: 'Your linked video', type: 'Direct link', duration: '', url: videoInput.trim(), image: '' }); setPlaying(true); setError('');
   };
   return <>
     <header className="navbar"><div className="container-width nav-inner">
