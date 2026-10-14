@@ -175,6 +175,7 @@ button { font-family: inherit; }
 @media (max-width: 767px) { .more-work { padding: 13px 14px; gap: 10px; }.more-work-label { font-size: 9px; }.more-work-count { font-size: 8px; } }
 
 .project-thumbnail.portrait { aspect-ratio: 9/16; }
+.project-card { align-self: start; }
 .hub-vertical { --stage-h: min(76vh, 660px); display: flex; flex-direction: column; align-items: center; }
 .hub-vertical .video-player, .hub-vertical .player-poster { width: calc(var(--stage-h) * 0.5625); height: var(--stage-h); max-width: 100%; }
 .hub-vertical .player-caption, .hub-vertical .link-input-form { width: calc(var(--stage-h) * 0.5625); max-width: 100%; }
