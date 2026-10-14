@@ -99,7 +99,7 @@ button { font-family: inherit; }
 .project-meta > span:last-child { font-size: 8px; color: var(--muted-foreground); }
 .project-note { font-size: 10px; color: var(--muted-foreground); margin-top: 18px; display: flex; align-items: center; gap: 7px; }
 .hub-section { background: var(--muted); border-block: 1px solid var(--border); }
-.hub-layout { display: grid; grid-template-columns: 1.65fr 1fr; gap: 24px; }
+.hub-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
 .video-player { position: relative; aspect-ratio: 16/9; background: var(--overlay-ink); overflow: hidden; }
 .video-player iframe, .video-player video { border: 0; width: 100%; height: 100%; }
 .player-error { position: absolute; inset: 0; background: var(--overlay-ink); color: var(--on-image); display: flex; align-items: center; justify-content: center; gap: 9px; font-size: 13px; }
@@ -173,3 +173,12 @@ button { font-family: inherit; }
 .more-work-chevron { color: var(--muted-foreground); transition: transform .3s; }
 .more-work[aria-expanded="true"] .more-work-chevron { transform: rotate(180deg); }
 @media (max-width: 767px) { .more-work { padding: 13px 14px; gap: 10px; }.more-work-label { font-size: 9px; }.more-work-count { font-size: 8px; } }
+
+.project-thumbnail.portrait { aspect-ratio: 9/16; }
+.hub-vertical { --stage-h: min(76vh, 660px); display: flex; flex-direction: column; align-items: center; }
+.hub-vertical .video-player, .hub-vertical .player-poster { width: calc(var(--stage-h) * 0.5625); height: var(--stage-h); max-width: 100%; }
+.hub-vertical .player-caption, .hub-vertical .link-input-form { width: calc(var(--stage-h) * 0.5625); max-width: 100%; }
+.hub-thumb { width: 34px; height: 60px; object-fit: cover; border-radius: 3px; flex-shrink: 0; }
+.player-vertical { display: flex; justify-content: center; }
+.player-vertical .video-player { --stage-h: min(64vh, 560px); width: calc(var(--stage-h) * 0.5625); height: var(--stage-h); max-width: 100%; }
+@media (max-width: 767px) { .hub-vertical { --stage-h: min(64vh, 560px); } .player-vertical .video-player { --stage-h: min(56vh, 480px); } }
