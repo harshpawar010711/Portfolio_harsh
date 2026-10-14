@@ -8,3 +8,4 @@
 - [x] Replace dummy video links with the five real client reels (YouTube shorts + Instagram reels) in gallery and hub.
 - [x] Add per-card creator tags and footer row for The Bihar Story / The Uttar Pradesh Story / FOAID.
 - [x] Show one card per category in the "All" gallery with all remaining videos behind a "More work" bar.
+- [x] Present reels and long-form videos as vertical (9:16) portrait cards, and make the Direct Video Hub a vertical player with portrait reel thumbnails.
