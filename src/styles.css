@@ -193,6 +193,10 @@ button { font-family: inherit; }
 .booking-head p { font-size: 11px; color: var(--muted-foreground); margin-top: 7px; }
 .booking-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 9px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); color: var(--muted-foreground); white-space: nowrap; flex-shrink: 0; }
 .booking-badge i { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
-.calendly-embed { position: relative; height: 700px; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--background); box-shadow: var(--paper-shadow); }
-.calendly-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-@media (max-width: 767px) { .contact-booking { margin-top: 30px; } .booking-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 14px; } .booking-head h3 { font-size: 22px; } .calendly-embed { height: 620px; border-radius: 10px; } }
+.booking-cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.booking-cta { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 22px; border: 1px solid var(--primary); border-radius: 6px; background: var(--primary); color: var(--foreground); font-size: 11px; font-weight: 500; letter-spacing: 1.4px; text-transform: uppercase; transition: background .2s, border-color .2s, transform .2s; }
+.booking-cta svg { transition: transform .2s; }
+.booking-cta:hover { background: var(--amber); border-color: var(--amber); transform: translateY(-1px); }
+.booking-cta:hover svg { transform: translate(2px, -2px); }
+.booking-hint { font-size: 9px; letter-spacing: .6px; color: var(--muted-foreground); }
+@media (max-width: 767px) { .contact-booking { margin-top: 30px; } .booking-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 14px; } .booking-head h3 { font-size: 22px; } .booking-cta { width: 100%; justify-content: center; height: 42px; font-size: 10px; } }
