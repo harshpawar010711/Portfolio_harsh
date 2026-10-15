@@ -10,3 +10,4 @@
 - [x] Show one card per category in the "All" gallery with all remaining videos behind a "More work" bar.
 - [x] Present reels and long-form videos as vertical (9:16) portrait cards, and make the Direct Video Hub a vertical player with portrait reel thumbnails.
 - [x] Make Clipping and AI Generation cards vertical (9:16) too and lay the gallery out as two cards per row.
+- [x] Add an inline Calendly booking widget (700px, rounded white-theme frame) to the contact section.
