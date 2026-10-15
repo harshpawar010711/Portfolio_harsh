@@ -9,3 +9,4 @@
 - [x] Add per-card creator tags and footer row for The Bihar Story / The Uttar Pradesh Story / FOAID.
 - [x] Show one card per category in the "All" gallery with all remaining videos behind a "More work" bar.
 - [x] Present reels and long-form videos as vertical (9:16) portrait cards, and make the Direct Video Hub a vertical player with portrait reel thumbnails.
+- [x] Make Clipping and AI Generation cards vertical (9:16) too and lay the gallery out as two cards per row.
