@@ -29,14 +29,14 @@ export function CursorHalo() {
     const move = (event: PointerEvent) => {
       targetX = event.clientX;
       targetY = event.clientY;
-      if (!on) { on = true; node.dataset.on = 'true'; x = targetX; y = targetY; }
+      if (!on) { on = true; node.dataset["on"] = 'true'; x = targetX; y = targetY; }
       const element = event.target as HTMLElement | null;
-      node.dataset.hot = element?.closest(BIG) ? 'lg' : element?.closest(HOT) ? 'hot' : 'idle';
+      node.dataset["hot"] = element?.closest(BIG) ? 'lg' : element?.closest(HOT) ? 'hot' : 'idle';
     };
 
-    const press = () => { node.dataset.down = 'true'; };
-    const release = () => { node.dataset.down = 'false'; };
-    const leave = () => { node.dataset.on = 'false'; node.dataset.hot = 'idle'; node.dataset.down = 'false'; };
+    const press = () => { node.dataset["down"] = 'true'; };
+    const release = () => { node.dataset["down"] = 'false'; };
+    const leave = () => { node.dataset["on"] = 'false'; node.dataset["hot"] = 'idle'; node.dataset["down"] = 'false'; };
 
     window.addEventListener('pointermove', move, { passive: true });
     window.addEventListener('pointerdown', press, { passive: true });
