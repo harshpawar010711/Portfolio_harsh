@@ -12,4 +12,4 @@
 - [x] Make Clipping and AI Generation cards vertical (9:16) too and lay the gallery out as two cards per row.
 - [x] Add an inline Calendly booking widget (700px, rounded white-theme frame) to the contact section.
 - [x] Replace the large Calendly embed with a compact booking button.
-- [ ] Add a hover effect to the custom pointer.
+- [x] Add a hover effect to the custom pointer (lime halo that grows on interactive elements).
