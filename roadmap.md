@@ -9,7 +9,7 @@
 - [x] Add per-card creator tags and footer row for The Bihar Story / The Uttar Pradesh Story / FOAID.
 - [x] Show one card per category in the "All" gallery with all remaining videos behind a "More work" bar.
 - [x] Present reels and long-form videos as vertical (9:16) portrait cards, and make the Direct Video Hub a vertical player with portrait reel thumbnails.
-- [x] Make Clipping and AI Generation cards vertical (9:16) too and lay the gallery out as two cards per row.
+- [x] Make Clipping and AI Generation cards vertical (9:16) too and lay the gallery out as four cards per row on desktop (two on tablets and phones).
 - [x] Add an inline Calendly booking widget (700px, rounded white-theme frame) to the contact section.
 - [x] Replace the large Calendly embed with a compact booking button.
 - [x] Add a hover effect to the custom pointer (lime halo that grows on interactive elements).
