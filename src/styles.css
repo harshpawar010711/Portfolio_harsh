@@ -164,10 +164,15 @@ button { font-family: inherit; }
 .client-tag { font-size: 8px; font-weight: 500; padding: 4px 7px; background: color-mix(in oklab, var(--primary) 14%, var(--background)); border-radius: 3px; }
 .client-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--foreground); border-bottom: 1px solid var(--border); padding-bottom: 2px; transition: color .2s, border-color .2s; }
 .client-link:hover { color: var(--primary); border-color: var(--primary); }
-.clients-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-.clients-label { font-size: 8px; letter-spacing: 1.5px; color: var(--muted-foreground); }
-.clients-row a { font-size: 10px; color: var(--foreground); border-bottom: 1px solid var(--border); padding-bottom: 2px; transition: color .2s, border-color .2s; }
-.clients-row a:hover { color: var(--primary); border-color: var(--primary); }
+.clients-band { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: color-mix(in oklab, var(--foreground) 3%, var(--background)); padding: 22px 0; }
+.clients-band .container-width { display: flex; align-items: center; justify-content: space-between; gap: 22px; flex-wrap: wrap; }
+.clients-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted-foreground); }
+.clients-chips { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.clients-chips a { font-size: 12px; color: var(--foreground); border: 1px solid var(--border); background: var(--card); border-radius: 4px; padding: 9px 16px; display: inline-flex; align-items: center; gap: 7px; transition: background .2s, border-color .2s, transform .2s; }
+.clients-chips a::after { content: '↗'; font-size: 10px; color: var(--muted-foreground); }
+.clients-chips a:hover { background: var(--primary); border-color: var(--primary); transform: translateY(-1px); }
+.clients-chips a:hover::after { color: var(--foreground); }
+@media (max-width: 767px) { .clients-band { padding: 16px 0; } .clients-band .container-width { flex-direction: column; align-items: flex-start; gap: 11px; } .clients-chips a { font-size: 11px; padding: 7px 12px; } }
 .more-work { width: 100%; margin-top: 23px; display: flex; align-items: center; gap: 14px; padding: 15px 18px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); box-shadow: var(--paper-shadow); color: var(--foreground); cursor: pointer; text-align: left; transition: border-color .2s, background .2s; }
 .more-work:hover { border-color: var(--foreground); background: color-mix(in oklab, var(--primary) 12%, var(--card)); }
 .more-work-label { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; }

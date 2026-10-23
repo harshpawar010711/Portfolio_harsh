@@ -13,3 +13,4 @@
 - [x] Add an inline Calendly booking widget (700px, rounded white-theme frame) to the contact section.
 - [x] Replace the large Calendly embed with a compact booking button.
 - [x] Add a hover effect to the custom pointer (lime halo that grows on interactive elements).
+- [x] Move "Also edited for" out of the footer into a full-width band under the gallery with larger client-name chips.
