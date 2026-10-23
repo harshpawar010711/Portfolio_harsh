@@ -72,6 +72,7 @@ function Portfolio() {
     setActiveVideo({ title: 'Your linked video', type: 'Direct link', duration: '', url: videoInput.trim(), image: '' }); setPlaying(true); setError('');
   };
   return <>
+    <CursorHalo />
     <header className="navbar"><div className="container-width nav-inner">
       <a href="#top" className="brand" aria-label="Harsh Pawar home"><span className="monogram">h.</span>Harsh Pawar<span className="text-muted-foreground">®</span></a>
       <nav className="nav-links" aria-label="Main navigation"><a href="#work">Selected work</a><a href="#watch">Direct video hub</a><a href="#pipeline">About & pipeline</a><a href="#contact">Contact</a></nav>
