@@ -200,3 +200,11 @@ button { font-family: inherit; }
 .booking-cta:hover svg { transform: translate(2px, -2px); }
 .booking-hint { font-size: 9px; letter-spacing: .6px; color: var(--muted-foreground); }
 @media (max-width: 767px) { .contact-booking { margin-top: 30px; } .booking-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 14px; } .booking-head h3 { font-size: 22px; } .booking-cta { width: 100%; justify-content: center; height: 42px; font-size: 10px; } }
+/* ===== Pointer halo (hover effect on the custom cursor) ===== */
+.cursor-halo { position: fixed; top: 0; left: 0; width: 42px; height: 42px; margin: -21px 0 0 -21px; border-radius: 50%; pointer-events: none; z-index: 9999; opacity: 0; transition: opacity .3s; will-change: transform; }
+.cursor-halo > span { display: block; width: 100%; height: 100%; border-radius: 50%; border: 1px solid color-mix(in oklab, var(--foreground) 28%, transparent); background: color-mix(in oklab, var(--primary) 18%, transparent); scale: .5; transition: scale .22s cubic-bezier(.2,.8,.2,1), background .22s, border-color .22s; }
+.cursor-halo[data-on="true"] { opacity: 1; }
+.cursor-halo[data-hot="hot"] > span { scale: 1.1; background: color-mix(in oklab, var(--primary) 42%, transparent); border-color: color-mix(in oklab, var(--foreground) 45%, transparent); }
+.cursor-halo[data-hot="lg"] > span { scale: 1.85; background: color-mix(in oklab, var(--primary) 62%, transparent); border-color: transparent; }
+.cursor-halo[data-down="true"] > span { scale: .42; transition-duration: .09s; }
+@media (hover: none), (prefers-reduced-motion: reduce) { .cursor-halo { display: none; } }

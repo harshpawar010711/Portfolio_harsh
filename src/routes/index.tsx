@@ -4,6 +4,7 @@ import { ArrowUpRight, ArrowRight, ArrowDown, Play, Film, Sparkles, Scissors, Li
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { VideoPlayer } from '@/components/portfolio/video-player';
+import { CursorHalo } from '@/components/portfolio/cursor-halo';
 import { projects, categories, hubVideos, showreel, resolveVideo, type Project, type Category } from '@/lib/portfolio';
 import desert from '@/assets/desert-film.jpg';
 
