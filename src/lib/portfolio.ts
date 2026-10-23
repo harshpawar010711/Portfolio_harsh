@@ -5,6 +5,7 @@ import reelDream916 from '@/assets/reel-dream-916.jpg';
 import reelStory916 from '@/assets/reel-story-916.jpg';
 import reelMarketing916 from '@/assets/reel-marketing-916.jpg';
 import reelSilence916 from '@/assets/reel-silence-916.jpg';
+import reelKotak916 from '@/assets/reel-kotak-916.jpg';
 import reelVirality916 from '@/assets/reel-virality-916.jpg';
 import showreel916 from '@/assets/showreel-916.jpg';
 import reelDream from '@/assets/reel-dream.jpg';
@@ -29,6 +30,7 @@ export const projects: Project[] = [
   { id: 7, title: 'TAB promo', category: 'AI Generation', image: aiTab, duration: 'AI', metric: 'AI-generated period drama promo', url: 'https://drive.google.com/file/d/1Rhwd379X7nDvG54Z5dQpe0IlAWGpaJjH/view', description: 'A cinematic promo built from AI-generated scenes — candlelit interiors, dramatic character beats and a trailer-style build, cut so the generated footage reads like a real production.', tools: ['AI video generation', 'Premiere Pro', 'After Effects'] },
   { id: 8, title: 'Episode 06', category: 'AI Generation', image: aiEp6, duration: 'AI', metric: 'AI-generated series episode', url: 'https://drive.google.com/file/d/1PbTjdaI5qeU5xjTF30iza24iC1Gc9lx9/view', description: 'An episode from an AI-generated vertical series. Generated shots are sequenced for continuity, paced for retention, and finished with sound design that carries the story between scenes.', tools: ['AI video generation', 'Premiere Pro'] },
   { id: 9, title: 'Night street sequence', category: 'AI Generation', image: aiGevj, duration: 'AI', metric: 'AI-generated cinematic sequence', url: 'https://drive.google.com/file/d/16ByU3z5i57tSJIUv1pzxX6MlYJoPHkrL/view', description: 'A moody night-time sequence made with generative video — street-light atmosphere, deliberate camera moves and a grade that keeps every generated shot feeling like one world.', tools: ['AI video generation', 'DaVinci Resolve'] },
+  { id: 10, title: 'Guess The Year | Neology', category: 'Short Form / Reels', image: reelKotak916, duration: 'SHORT', metric: 'Brand campaign short', url: 'https://youtube.com/shorts/ZGZQy6ONPBU', client: { name: 'Kotak Securities', url: 'https://www.youtube.com/@kotakneo' }, description: 'A brand short for Kotak Securities\' Neology series — a "guess the year" quiz format built to make viewers lean in, answer, and stay for the reveal. Crisp motion typography and snappy cuts keep the game moving.', tools: ['Premiere Pro', 'After Effects'] },
   showreel,
 ];
 
@@ -39,6 +41,7 @@ export const hubVideos: HubVideo[] = [
   { title: 'Our full story', type: 'Instagram', duration: 'REEL', url: 'https://www.instagram.com/reel/DRHL92Lj_aj/', image: reelStory916 },
   { title: 'Marketing genius', type: 'YouTube', duration: 'SHORT', url: 'https://youtube.com/shorts/NGk85Xwh88k', image: reelMarketing916 },
   { title: 'When silence becomes the final warning', type: 'YouTube', duration: 'SHORT', url: 'https://youtube.com/shorts/ssMpDIdG0Q8', image: reelSilence916 },
+  { title: 'Guess The Year | Neology', type: 'YouTube', duration: 'SHORT', url: 'https://youtube.com/shorts/ZGZQy6ONPBU', image: reelKotak916 },
 ];
 
 export function resolveVideo(value: string): { type: 'embed' | 'video'; src: string } | null {
