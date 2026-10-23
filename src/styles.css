@@ -79,7 +79,7 @@ button { font-family: inherit; }
 .filter { font-size: 10px; border-radius: 4px; padding: 0 16px; height: 32px; box-shadow: none; }
 .filter-active { background: var(--foreground); color: var(--background); }
 .filter-active:hover { background: var(--primary); color: var(--foreground); }
-.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 23px; }
+.project-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .project-card { height: auto; display: block; padding: 0; overflow: hidden; text-align: left; border: 1px solid var(--border); border-radius: 6px; background: var(--card); white-space: normal; box-shadow: var(--paper-shadow); }
 .project-card:hover { background: var(--card); border-color: var(--foreground); }
 .project-thumbnail { position: relative; aspect-ratio: 16/9; overflow: hidden; }
@@ -178,6 +178,11 @@ button { font-family: inherit; }
 
 .project-thumbnail.portrait { aspect-ratio: 9/16; }
 .project-card { align-self: start; }
+.project-grid { gap: 14px; }
+.project-info { padding: 13px; }
+.project-info h3 { font-size: 13px; min-height: 34px; margin-bottom: 9px; }
+.project-meta > span { font-size: 8px; }
+@media (max-width: 900px) { .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
 .hub-vertical { --stage-h: min(76vh, 660px); display: flex; flex-direction: column; align-items: center; }
 .hub-vertical .video-player, .hub-vertical .player-poster { width: calc(var(--stage-h) * 0.5625); height: var(--stage-h); max-width: 100%; }
 .hub-vertical .player-caption, .hub-vertical .link-input-form { width: calc(var(--stage-h) * 0.5625); max-width: 100%; }
