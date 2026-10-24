@@ -14,3 +14,4 @@
 - [x] Replace the large Calendly embed with a compact booking button.
 - [x] Add a hover effect to the custom pointer (lime halo that grows on interactive elements).
 - [x] Move "Also edited for" out of the footer into a full-width band under the gallery with larger client-name chips.
+- [x] Add the Kotak Securities reel ("Guess The Year | Neology") as a gallery + hub card and list Kotak Securities in the "Also edited for" band.
