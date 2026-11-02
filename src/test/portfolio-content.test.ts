@@ -6,7 +6,8 @@ import { categories, hubVideos, projects } from "@/lib/portfolio";
 describe("Portfolio content", () => {
   it("has no AI Generation category or AI-generated videos", () => {
     expect(categories).not.toContain("AI Generation");
-    expect(projects.some(project => project.category === "AI Generation")).toBe(false);
+    const projectCategories: string[] = projects.map(project => project.category);
+    expect(projectCategories).not.toContain("AI Generation");
     expect(projects.some(project => project.url.includes("drive.google.com"))).toBe(false);
     expect(hubVideos.some(video => video.url.includes("drive.google.com"))).toBe(false);
   });
