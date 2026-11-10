@@ -7,7 +7,7 @@
 - [x] Point both reel triggers at the real YouTube showreel.
 - [x] Replace dummy video links with the five real client reels (YouTube shorts + Instagram reels) in gallery and hub.
 - [x] Add per-card creator tags and footer row for The Bihar Story / The Uttar Pradesh Story / FOAID.
-- [x] Show one card per category in the "All" gallery with all remaining videos behind a "More work" bar.
+- [x] Show one card per category plus one additional short-form reel in the "All" gallery, with remaining videos behind "More work".
 - [x] Present reels and long-form videos as vertical (9:16) portrait cards, and make the Direct Video Hub a vertical player with portrait reel thumbnails.
 - [x] Make Clipping and AI Generation cards vertical (9:16) too and lay the gallery out as four cards per row on desktop (two on tablets and phones).
 - [x] Add an inline Calendly booking widget (700px, rounded white-theme frame) to the contact section.
@@ -16,3 +16,5 @@
 - [x] Move "Also edited for" out of the footer into a full-width band under the gallery with larger client-name chips.
 - [x] Add the Kotak Securities reel ("Guess The Year | Neology") as a gallery + hub card and list Kotak Securities in the "Also edited for" band.
 - [x] Remove the AI Generation section and its three AI-generated videos from the gallery.
+- [x] Show one additional short-form reel in the collapsed All gallery view.
+- [x] Add a subtle magnifying hover effect with softly blurred cyan edges.

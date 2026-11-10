@@ -28,6 +28,15 @@ export const projects: Project[] = [
   showreel,
 ];
 
+export function getFeaturedProjects(projectList: Project[]): Project[] {
+  const seen = new Map<Category, number>();
+  return projectList.filter(project => {
+    const count = (seen.get(project.category) ?? 0) + 1;
+    seen.set(project.category, count);
+    return count <= (project.category === 'Short Form / Reels' ? 2 : 1);
+  });
+}
+
 export interface HubVideo { title: string; type: string; duration: string; url: string; image: string; }
 export const hubVideos: HubVideo[] = [
   { title: 'Find your dream job', type: 'YouTube', duration: 'SHORT', url: 'https://youtube.com/shorts/9dnPIPjoMPA', image: reelDream916 },
