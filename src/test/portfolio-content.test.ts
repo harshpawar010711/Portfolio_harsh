@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { categories, hubVideos, projects } from "@/lib/portfolio";
+import { categories, getFeaturedProjects, hubVideos, projects } from "@/lib/portfolio";
 
 // The user asked for the AI-generated work to come off the site entirely.
 describe("Portfolio content", () => {
@@ -16,5 +16,9 @@ describe("Portfolio content", () => {
     expect(projects).toHaveLength(7);
     expect(projects.map(project => project.id)).toEqual([1, 2, 3, 4, 5, 10, 6]);
     expect(hubVideos).toHaveLength(6);
+  });
+
+  it("features one extra short-form reel in the All view", () => {
+    expect(getFeaturedProjects(projects).map(project => project.id)).toEqual([1, 2, 3, 6]);
   });
 });

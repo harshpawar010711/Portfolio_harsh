@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { VideoPlayer } from '@/components/portfolio/video-player';
 import { CursorHalo } from '@/components/portfolio/cursor-halo';
-import { projects, categories, hubVideos, showreel, resolveVideo, type Project, type Category } from '@/lib/portfolio';
+import { projects, categories, hubVideos, showreel, resolveVideo, getFeaturedProjects, type Project, type Category } from '@/lib/portfolio';
 import desert from '@/assets/desert-film.jpg';
 
 export const Route = createFileRoute('/')({
@@ -47,9 +47,7 @@ function Portfolio() {
   const openReel = () => setSelected(showreel);
   const shownProjects = useMemo(() => {
     const list = projects.filter(project => filter === 'All' || project.category === filter);
-    if (filter !== 'All') return list;
-    const seen = new Map<Category, number>();
-    return list.filter(project => { const count = (seen.get(project.category) ?? 0) + 1; seen.set(project.category, count); return count <= 1; });
+    return filter === 'All' ? getFeaturedProjects(list) : list;
   }, [filter]);
   const extraProjects = useMemo(() => projects.filter(project => (filter === 'All' || project.category === filter) && !shownProjects.includes(project)), [filter, shownProjects]);
   const visibleProjects = moreOpen ? [...shownProjects, ...extraProjects] : shownProjects;
