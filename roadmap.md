@@ -16,3 +16,5 @@
 - [x] Move "Also edited for" out of the footer into a full-width band under the gallery with larger client-name chips.
 - [x] Add the Kotak Securities reel ("Guess The Year | Neology") as a gallery + hub card and list Kotak Securities in the "Also edited for" band.
 - [x] Remove the AI Generation section and its three AI-generated videos from the gallery.
+- [x] Show one additional short-form reel in the collapsed All gallery view.
+- [ ] Add a subtle magnifying hover effect with softly blurred cyan edges.
