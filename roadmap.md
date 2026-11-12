@@ -19,4 +19,4 @@
 - [x] Show one additional short-form reel in the collapsed All gallery view.
 - [x] Add a subtle magnifying hover effect with softly blurred cyan edges.
 - [x] Increase top navigation label contrast for better readability.
-- [x] Change the views-generated counter from 10M+ to 100.
+- [x] Change the views-generated counter to 100M+.
