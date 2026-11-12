@@ -40,8 +40,8 @@ button { font-family: inherit; }
 .brand { display: flex; align-items: center; gap: 11px; color: var(--foreground); font-size: 16px; font-weight: 600; }
 .monogram { font-size: 22px; font-weight: 700; width: 34px; height: 34px; background: var(--primary); display: grid; place-items: center; }
 .nav-links { display: flex; align-items: center; gap: 27px; }
-.nav-links a { color: var(--muted-foreground); font-size: 12px; transition: color .2s; }
-.nav-links a:hover { color: var(--foreground); }
+.nav-links a { color: var(--foreground); font-size: 12px; font-weight: 500; border-bottom: 1px solid transparent; padding-block: 4px; transition: color .2s, border-color .2s; }
+.nav-links a:hover { color: var(--foreground); border-bottom-color: var(--primary); }
 .availability { display: flex; align-items: center; gap: 7px; font-size: 10px; white-space: nowrap; }
 .availability i { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 3px var(--secondary); }
 .nav-actions { display: flex; align-items: center; gap: 22px; }
